@@ -33,7 +33,7 @@ Invocation is the triggering word for Alxe to run your custom application. In th
 
 Name the Invocation as `Jira bot`
 
-![invocation](/images/invocation.png)
+![invocation](/images/Invocation.png)
 
 ### Intents
 Intents are the basic class which will be handled in handlers. We need to define some words for it then Alexa will understand these words to trigger relevant handler functions. Our example covers the Customer Support project do we will have a `customerSupportIntent` for it.
