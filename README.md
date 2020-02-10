@@ -85,3 +85,7 @@ class customerSupportIntentHandler(AbstractRequestHandler):
                 .response
         )
 ```
+## Authors
+[Sercan Erhan](https://github.com/sercanerhan)
+
+[Kubilay Küpeli](https://github.com/kubilay)
