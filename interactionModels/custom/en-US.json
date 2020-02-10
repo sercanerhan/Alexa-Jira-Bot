@@ -1,0 +1,90 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "jira bot",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "home",
+            "back"
+          ]
+        },
+        {
+          "name": "customerSupportIntent",
+          "slots": [
+            {
+              "name": "issueKey",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "customer support {issueKey}",
+                "cs {issueKey}",
+                "{issueKey}"
+              ]
+            }
+          ],
+          "samples": [
+            "cs",
+            "customer support"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "customerSupportIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "issueKey",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.67256509806.453439016466",
+                "elicitation": "Elicit.Slot.67256509806.453439016466"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Slot.67256509806.453439016466",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "it is customer support {issueKey} , right?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.67256509806.453439016466",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please tell me the issue key."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "17"
+}
